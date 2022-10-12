@@ -12,7 +12,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    UserDao userDao;
+    private UserDao userDao;
 
     @Override
     @Transactional
@@ -21,13 +21,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional
     public User getUser(long id) {
         return userDao.getUser(id);
     }
 
     @Override
-    @Transactional
     public List<User> getUsers() {
         return userDao.getUsers();
     }
